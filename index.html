@@ -1,0 +1,94 @@
+<!DOCKTYPE html>
+<html>
+<head>
+    <title>Movimentação de Bens</title>
+    <meta name="description" content="bens">
+    <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="/images/icon.ico">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="text"] {
+            padding: 5px;
+        }
+        input[type="submit"] {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;  l 
+        }
+    </style>
+</head>
+    #
+<body style="background-color: #113F59">
+<header style="font-family: fantasy; text-align: center;">
+<a>
+  <img src="images/CAM.gif" alt="Title" style="width:150px;height:100px;">
+</a>
+</header>
+
+<nav>
+    <table>
+    <thead>
+        <tr>
+            <th style="text-align: center">PP</th>
+            <th style="text-align: center">S/N</th>
+        </tr>
+    </thead>
+    <tbody id="table-body">
+        <!-- Aqui serão adicionadas as linhas da tabela -->
+    </tbody>
+</table>
+
+<form id="add-form">
+    <label for="data1" style="background-color: aliceblue; background-size: auto">Placa Patrimonial</label>
+    <input type="text" id="data1" name="data1">
+    <label for="data2">Número de Série</label>
+    <input type="text" id="data2" name="data2">
+    <input type="submit" value="Adicionar">
+</form>
+
+<script>
+    document.getElementById('add-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        // Obter os valores dos campos de entrada
+        var data1 = document.getElementById('data1').value;
+        var data2 = document.getElementById('data2').value;
+        
+        // Criar uma nova linha para a tabela
+        var newRow = document.createElement('tr');
+        
+        // Adicionar células com os valores inseridos
+        newRow.innerHTML = '<td>' + data1 + '</td><td>' + data2 + '</td>';
+        
+        // Adicionar a nova linha à tabela
+        document.getElementById('table-body').appendChild(newRow);
+        
+        // Limpar os campos de entrada
+        document.getElementById('data1').value = '';
+        document.getElementById('data2').value = '';
+    });
+</script>
+</nav>  
+    
+<footer style="text-align: center; color: crimson;">
+  <div class="error"><noscript><p>Você deve ativar a função JavaScript do seu navegador</p></noscript></div>    
+</footer>    
+    
+ 
+</body>
+    
+</html>
